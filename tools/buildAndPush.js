@@ -27,15 +27,20 @@ const version = require('../package.json').version
     let tagsStmt = tags.reduce((stmt, tag) => `${stmt}-t ${tag} `, '').trim()
     
     // Generate the command to run
-    let cmd = `docker build ${tagsStmt} . && docker push ${tags[0]}`
+    let cmd = [ `docker build ${tagsStmt} .` ]
+      .concat(tags.map(tag => `docker push ${tag}`))
+      .join(' && ')
+    
+    // Print the command we're running
     console.log('Running:', cmd)
     
-    // Run the command
-    if (!process.argv.includes('dry')) {
-      let proc = exec(cmd)
-      proc.stdout.pipe(process.stdout)
-      proc.stderr.pipe(process.stderr)
-    }
+    // Stop if in dry mode
+    if (process.argv.includes('dry') && process.argv.includes('--dry')) return
+    
+    // Execute the command
+    let proc = exec(cmd)
+    proc.stdout.pipe(process.stdout)
+    proc.stderr.pipe(process.stderr)
   }
   catch (error) {
     console.log(`Error: ${error.message}`)
