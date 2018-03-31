@@ -7,8 +7,7 @@ module.exports = {
     ecmaVersion: 2017
   },
   env: {
-    browser: true,
-    mocha: true
+    browser: true
   },
   extends: 'standard',
   
@@ -24,28 +23,7 @@ module.exports = {
     
     /* Rob's tweaks */
     
-    
-    // Disallow trailing spaces, exept on blank lines
-    'no-trailing-spaces': ["error", { "skipBlankLines": true }],
-    
-    // Allow empty lines at the start / end of a block
-    'padded-blocks': 'off',
-    
-    // Make else & catch on line after '}'
-    'brace-style': ["error", "stroustrup", { "allowSingleLine": true } ],
-    
-    // Allow arbitrary empty lines
-    'no-multiple-empty-lines': 'off',
-    
-    // Only warn for unused variables
-    'no-unused-vars': 'warn',
-    
-    // No space between function names and the args (exepct for async arrow functions)
-    'space-before-function-paren': ['error', {
-      'anonymous': 'never',
-      'named': 'never',
-      'asyncArrow': 'always'
-    }],
+    'no-trailing-spaces': [ 'error', { 'skipBlankLines': true } ]
   },
   
   // Custom globals ... don't use globals

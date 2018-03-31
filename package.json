@@ -1,13 +1,12 @@
 {
   "name": "test",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Project setup by robb-j/node-base",
-  "main": "index.js",
+  "main": "web/index.js",
   "scripts": {
     "coverage": "nyc --reporter=html mocha test/unit",
     "coverage-summary": "nyc --reporter=text-summary mocha test/unit",
     "lint": "eslint web test",
-    "push-image": "node tools/buildAndPush.js",
     "postversion": "node tools/buildAndPush.js latest",
     "start": "node web",
     "test": "mocha test/unit",

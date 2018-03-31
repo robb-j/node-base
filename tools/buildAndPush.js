@@ -1,4 +1,3 @@
-
 // Imports
 const fs = require('fs')
 const path = require('path')
@@ -9,11 +8,8 @@ const readFile = promisify(fs.readFile)
 
 const version = process.env.npm_package_version
 
-
 ;(async () => {
-  
   try {
-    
     // Get the registry to push to from the REGISTRY file
     let registry = (await readFile(path.join(__dirname, '..', 'REGISTRY'), 'utf8')).trim()
     
@@ -31,19 +27,14 @@ const version = process.env.npm_package_version
       .concat(tags.map(tag => `docker push ${tag}`))
       .join(' && ')
     
-    // Print the command we're running
-    console.log('Running:', cmd)
-    
     // Stop if in dry mode
-    if (process.argv.includes('dry')) return
+    if (process.argv.includes('dry')) return console.log('Running:', cmd)
     
     // Execute the command
     let proc = exec(cmd)
     proc.stdout.pipe(process.stdout)
     proc.stderr.pipe(process.stderr)
-  }
-  catch (error) {
+  } catch (error) {
     console.log(`Error: ${error.message}`)
   }
-  
 })()
