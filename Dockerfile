@@ -1,11 +1,8 @@
-FROM node:9-alpine
-
+# Use a node alpine image install packages and run the start script
+FROM node:10-alpine
 WORKDIR /app
-
-COPY package.json /app
-
-RUN npm install -s --production
-
+COPY ["package.json", "package-lock.json", "/app/"]
+RUN npm ci --production > /dev/null
 COPY web /app/web
-
-CMD [ "npm", "start" ]
+ENTRYPOINT [ "npm" ]
+CMD [ "start", "-s" ]

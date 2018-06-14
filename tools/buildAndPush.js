@@ -1,3 +1,13 @@
+#!/usr/bin/env node
+
+/*
+ * robb-j - npm based docke build & push
+ * Uses /REGISTRY + package version to build and push a docker image
+ * Useful when set in a npm `postversion` script
+ * Args:
+ *  - [latest] Also tag with latest
+ *  - [dry] Don't perform the command
+ */
 
 // Imports
 const fs = require('fs')
@@ -9,11 +19,8 @@ const readFile = promisify(fs.readFile)
 
 const version = process.env.npm_package_version
 
-
 ;(async () => {
-  
   try {
-    
     // Get the registry to push to from the REGISTRY file
     let registry = (await readFile(path.join(__dirname, '..', 'REGISTRY'), 'utf8')).trim()
     
@@ -41,9 +48,7 @@ const version = process.env.npm_package_version
     let proc = exec(cmd)
     proc.stdout.pipe(process.stdout)
     proc.stderr.pipe(process.stderr)
-  }
-  catch (error) {
+  } catch (error) {
     console.log(`Error: ${error.message}`)
   }
-  
 })()
