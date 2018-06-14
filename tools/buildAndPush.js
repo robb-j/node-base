@@ -38,11 +38,8 @@ const version = process.env.npm_package_version
       .concat(tags.map(tag => `docker push ${tag}`))
       .join(' && ')
     
-    // Print the command we're running
-    console.log('Running:', cmd)
-    
     // Stop if in dry mode
-    if (process.argv.includes('dry')) return
+    if (process.argv.includes('dry')) return console.log('Running:', cmd)
     
     // Execute the command
     let proc = exec(cmd)

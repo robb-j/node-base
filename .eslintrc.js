@@ -22,7 +22,8 @@ module.exports = {
     
     
     /* Rob's tweaks */
-    'no-unused-vars': 'warn'
+    'no-unused-vars': 'warn',
+    'no-trailing-spaces': [ 'error', { 'skipBlankLines': true } ]
   },
   
   // Custom globals ... don't use globals
