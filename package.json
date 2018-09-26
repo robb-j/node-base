@@ -1,8 +1,9 @@
 {
-  "name": "test",
+  "name": "create-robbj-node",
+  "private": true,
   "version": "0.1.0",
   "description": "Project setup by robb-j/node-base",
-  "main": "web/index.js",
+  "main": "src/index.js",
   "scripts": {
     "coverage": "nyc --reporter=html mocha test/unit",
     "coverage-summary": "nyc --reporter=text-summary mocha test/unit",
@@ -16,15 +17,14 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "chai": "^4.1.2",
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-standard": "^3.1.0",
-    "mocha": "^5.2.0",
-    "nodemon": "^1.17.5",
-    "nyc": "^12.0.2"
+    "ajv": "^6.5.4",
+    "eslint": "^5.6.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4"
   }
 }
