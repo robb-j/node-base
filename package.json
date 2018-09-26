@@ -7,11 +7,11 @@
   "scripts": {
     "coverage": "nyc --reporter=html mocha test/unit",
     "coverage-summary": "nyc --reporter=text-summary mocha test/unit",
-    "lint": "eslint web test",
+    "lint": "eslint src test",
     "postversion": "node tools/buildAndPush.js latest",
-    "start": "node web",
+    "start": "node src",
     "test": "mocha test/unit",
-    "watch": "nodemon web --watch web"
+    "watch": "nodemon src --watch src"
   },
   "author": "robb-j",
   "license": "ISC",
