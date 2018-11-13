@@ -7,7 +7,7 @@
   "scripts": {
     "coverage": "jest --coverage",
     "lint": "eslint src test",
-    "preversion": "node tools/buildAndPush.js latest",
+    "postversion": "node tools/buildAndPush.js latest",
     "prettier": "prettier --write ./**/*.{js,json,css,md}",
     "start": "node src",
     "test": "jest",
