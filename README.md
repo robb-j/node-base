@@ -1,6 +1,6 @@
 # Node Sample Project
 
-A project setup with [robb-j/node-base](https://github.com/robb-j/node-base/) template which creates a node app, with the common things already setup.
+A project setup with [robb-j/node-base](https://github.com/robb-j/node-base/) which creates a node app, with the common things already setup.
 
 ## Features
 
@@ -11,21 +11,20 @@ A project setup with [robb-j/node-base](https://github.com/robb-j/node-base/) te
 ## Dev Commands
 
 ```bash
-
 # Update version (builds & pushes a new docker image)
-# -> uses REGISTRY file & the npm version to tag image
+# -> Uses the REGISTRY file & the npm version to tag image
 npm version ... # --help
 
 # Lint the web & test directories
 npm run lint
 
+# Manually format code
+# -> This repo runs prettier on git-stage, so code is always to standard
+npm run prettier
+
 # Run the unit tests
 npm test
 
-# Generate coverage
+# Generate code coverage
 npm run coverage          # outputs to coverage/
-npm run coverage-summary  # outputs to terminal
-
-# Watch code with nodemon (restarts on file changes)
-npm run watch
 ```
