@@ -1,16 +1,24 @@
-# Node Sample Project
+# A Node Project
 
-A project setup with [robb-j/node-base](https://github.com/robb-j/node-base/) which creates a node app, with the common things already setup.
+This project was setup with [robb-j/node-base](https://github.com/robb-j/node-base/) which creates a node app, with the common things already setup.
 
-## Features
+## Template Features
 
-- Multi-stage docker build to install, test and deploy
-- Testing setup with `jest`
-- Linting setup with `tslint`
+- Docker build to install dependancies and deploy
+- Testing & code coverage with `jest`
+- Code linting with eslint
+- Code formatting with prettier on git file stage
+- Semantically versioned docker images using `npm version`
 
 ## Dev Commands
 
 ```bash
+# Start the app
+npm run start
+
+# Start the app and reload on file changes
+npm run watch
+
 # Update version (builds & pushes a new docker image)
 # -> Uses the REGISTRY file & the npm version to tag image
 npm version ... # --help
