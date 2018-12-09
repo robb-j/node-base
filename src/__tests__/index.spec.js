@@ -1,6 +1,5 @@
-
 describe('Sample', () => {
   it('should pass', async () => {
-    expect(true).toBe(true)
+    expect(1 + 1).toBe(2)
   })
 })
