@@ -8,7 +8,7 @@
     "coverage": "jest --coverage",
     "lint": "eslint src",
     "postversion": "node tools/buildAndPush.js",
-    "prettier": "prettier --write ./**/*.{js,json,css,md}",
+    "prettier": "prettier --write '**/*.{js,json,css,md}'",
     "start": "node src",
     "test": "jest",
     "watch": "nodemon src --watch src"
