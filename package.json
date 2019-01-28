@@ -6,6 +6,15 @@
   "main": "src/index.js",
   "author": "Rob Anderson (https://r0b.io)",
   "license": "MIT",
+  "scripts": {
+    "coverage": "jest --coverage",
+    "lint": "eslint src",
+    "postversion": "node tools/buildAndPush.js",
+    "prettier": "prettier --write '**/*.{js,json,css,md}'",
+    "start": "node src",
+    "test": "jest",
+    "dev": "NODE_ENV=development nodemon src --watch src"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -20,15 +29,6 @@
       "eslint",
       "git add"
     ]
-  },
-  "scripts": {
-    "coverage": "jest --coverage",
-    "lint": "eslint src",
-    "postversion": "node tools/buildAndPush.js",
-    "prettier": "prettier --write '**/*.{js,json,css,md}'",
-    "start": "node src",
-    "test": "jest",
-    "dev": "NODE_ENV=development nodemon src --watch src"
   },
   "dependencies": {},
   "devDependencies": {
