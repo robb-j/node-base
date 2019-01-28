@@ -1,6 +1,9 @@
+#
+# Ignore files from the docker command
+#
+
 .git
 node_modules
 coverage
 .DS_Store
-.nyc_output
 *.env

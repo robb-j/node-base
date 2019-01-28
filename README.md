@@ -4,10 +4,10 @@ This project was setup with [robb-j/node-base](https://github.com/robb-j/node-ba
 
 ## Template Features
 
-- Docker build to install dependancies and deploy
+- Docker build to install dependancies and package for production
 - Testing & code coverage with `jest`
-- Code linting with eslint
-- Code formatting with prettier on git file stage
+- Code linting with `eslint`
+- Code formatting with `prettier` on git commit
 - Semantically versioned docker images using `npm version`
 
 ## Dev Commands
@@ -17,7 +17,7 @@ This project was setup with [robb-j/node-base](https://github.com/robb-j/node-ba
 npm run start
 
 # Start the app and reload on file changes
-npm run watch
+npm run dev
 
 # Update version (builds & pushes a new docker image)
 # -> Uses the REGISTRY file & the npm version to tag image
@@ -34,5 +34,5 @@ npm run prettier
 npm test
 
 # Generate code coverage
-npm run coverage          # outputs to coverage/
+npm run coverage
 ```
