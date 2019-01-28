@@ -2,8 +2,8 @@
 FROM node:10-alpine
 WORKDIR /app
 EXPOSE 3000
-COPY ["package.json", "package-lock.json", "/app/"]
+COPY ["package*", "/app/"]
 ENV NODE_ENV production
 RUN npm ci > /dev/null
-COPY src /app/src
-CMD [ "npm", "start", "-s" ]
+COPY ["src", "/app/src"]
+CMD ["npm", "start", "-s"]
