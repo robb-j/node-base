@@ -6,11 +6,11 @@ This project was setup with [robb-j/node-base](https://github.com/robb-j/node-ba
 
 - Docker build to install dependancies and package for production
 - Testing & code coverage with `jest`
-- Code linting with `eslint`
+- Code linting with `eslint` & `standard`
 - Code formatting with `prettier` on git commit
 - Semantically versioned docker images using `npm version`
 
-## Dev Commands
+## Development
 
 ```bash
 # Start the app
