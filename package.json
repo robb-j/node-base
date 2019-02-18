@@ -12,15 +12,17 @@
     "lint": "eslint src",
     "postversion": "node tools/buildAndPush.js",
     "prettier": "prettier --write '**/*.{js,json,css,md}'",
-    "start": "node src",
+    "start": "node src/index.js",
     "test": "jest",
-    "dev": "NODE_ENV=development nodemon src --watch src"
+    "dev": "NODE_ENV=development nodemon -x 'node -r dotenv/config' --watch src src/index.js"
   },
   "keywords": [],
   "engines": {
     "node": ">=8"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^6.2.0"
+  },
   "devDependencies": {
     "eslint": "^5.14.0",
     "eslint-config-prettier": "^4.0.0",
