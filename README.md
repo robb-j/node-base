@@ -2,6 +2,10 @@
 
 This project was setup with [robb-j/node-base](https://github.com/robb-j/node-base/) which creates a node app, with the common things already setup.
 
+> **Deprecated:** I now use [puggle](https://github.com/robb-j/puggle/)
+> and [puggle-presets](https://github.com/robb-j/puggle-presets/)
+> to bootstrap my projects
+
 ## Template Features
 
 - Docker build to install dependancies and package for production
